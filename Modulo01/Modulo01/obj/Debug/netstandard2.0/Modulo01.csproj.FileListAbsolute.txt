@@ -1,0 +1,14 @@
+/Users/omausantos/WorkStation/TicketGo/Estudo/CCFoods/Modulo01/Modulo01/bin/Debug/netstandard2.0/Modulo01.deps.json
+/Users/omausantos/WorkStation/TicketGo/Estudo/CCFoods/Modulo01/Modulo01/bin/Debug/netstandard2.0/Modulo01.dll
+/Users/omausantos/WorkStation/TicketGo/Estudo/CCFoods/Modulo01/Modulo01/bin/Debug/netstandard2.0/ref/Modulo01.dll
+/Users/omausantos/WorkStation/TicketGo/Estudo/CCFoods/Modulo01/Modulo01/bin/Debug/netstandard2.0/Modulo01.pdb
+/Users/omausantos/WorkStation/TicketGo/Estudo/CCFoods/Modulo01/Modulo01/obj/Debug/netstandard2.0/Modulo01.csproj.AssemblyReference.cache
+/Users/omausantos/WorkStation/TicketGo/Estudo/CCFoods/Modulo01/Modulo01/obj/Debug/netstandard2.0/App.xaml.g.cs
+/Users/omausantos/WorkStation/TicketGo/Estudo/CCFoods/Modulo01/Modulo01/obj/Debug/netstandard2.0/MainPage.xaml.g.cs
+/Users/omausantos/WorkStation/TicketGo/Estudo/CCFoods/Modulo01/Modulo01/obj/Debug/netstandard2.0/Modulo01.AssemblyInfoInputs.cache
+/Users/omausantos/WorkStation/TicketGo/Estudo/CCFoods/Modulo01/Modulo01/obj/Debug/netstandard2.0/Modulo01.AssemblyInfo.cs
+/Users/omausantos/WorkStation/TicketGo/Estudo/CCFoods/Modulo01/Modulo01/obj/Debug/netstandard2.0/Modulo01.csproj.CoreCompileInputs.cache
+/Users/omausantos/WorkStation/TicketGo/Estudo/CCFoods/Modulo01/Modulo01/obj/Debug/netstandard2.0/XamlC.stamp
+/Users/omausantos/WorkStation/TicketGo/Estudo/CCFoods/Modulo01/Modulo01/obj/Debug/netstandard2.0/Modulo01.dll
+/Users/omausantos/WorkStation/TicketGo/Estudo/CCFoods/Modulo01/Modulo01/obj/Debug/netstandard2.0/ref/Modulo01.dll
+/Users/omausantos/WorkStation/TicketGo/Estudo/CCFoods/Modulo01/Modulo01/obj/Debug/netstandard2.0/Modulo01.pdb

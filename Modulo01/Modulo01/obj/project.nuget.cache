@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "MtrSmB6kteabqF9GcswkmaOahxoT/3bTSFJqRCbohKmnqj7EIJfu26kRCWyIyj79CmuFqWJ2fPMEyYsmAmbZzw==",
+  "success": true,
+  "projectFilePath": "/Users/omausantos/WorkStation/TicketGo/Estudo/CCFoods/Modulo01/Modulo01/Modulo01.csproj",
+  "expectedPackageFiles": [
+    "/Users/omausantos/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/Users/omausantos/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512",
+    "/Users/omausantos/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
+    "/Users/omausantos/.nuget/packages/xamarin.essentials/1.7.0/xamarin.essentials.1.7.0.nupkg.sha512",
+    "/Users/omausantos/.nuget/packages/xamarin.forms/5.0.0.2196/xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}
