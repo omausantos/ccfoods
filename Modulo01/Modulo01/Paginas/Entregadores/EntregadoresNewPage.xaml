@@ -113,7 +113,8 @@
                                 <Button
                                     Grid.Row="0"
                                     Grid.Column="0"
-                                    Text="Gravar"/>
+                                    Text="Gravar"
+                                    Clicked="BtnGravarClick"/>
 
                             </Grid>
 
