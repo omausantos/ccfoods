@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Modulo01.Paginas.Entregadores.EntregadoresNewPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+                VerticalOptions="Center">
+
+                <Grid
+                    Padding="5,10,5,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+
+                    </Grid.ColumnDefinitions>
+
+                    <Frame
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        BackgroundColor="Yellow"
+                        HasShadow="True"
+                        Padding="5,5,5,5">
+                        <StackLayout>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+
+                                </Grid.ColumnDefinitions>
+
+                                <Image
+                                    Source="icone_entregador.png"
+                                    Grid.Row="0"
+                                    Grid.Column="0" />
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Text="Novo Entregador"
+                                    FontSize="24"
+                                    TextColor="Blue"
+                                    HorizontalOptions="Start"
+                                    VerticalOptions="Center" />
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="2"
+                                    Text="Id"
+                                    Font="Bold, 24"
+                                    TextColor="Blue"
+                                    HorizontalOptions="End"
+                                    VerticalOptions="Center"
+                                    x:Name="identregador" />
+                            </Grid>
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        HasShadow="True"
+                        Padding="5,5,5,5">
+                        <StackLayout>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+
+                                </Grid.ColumnDefinitions>
+
+                                <Entry Placeholder="Nome do Entregador" PlaceholderColor="Gray" Grid.Row="0" Grid.Column="0" x:Name="nome"/>
+                                <Entry Placeholder="Telefone do Entregador" PlaceholderColor="Gray" Grid.Row="1" Grid.Column="0" x:Name="telefone" Keyboard="Telephone"/>
+
+                            </Grid>
+
+                        </StackLayout>
+
+                    </Frame>
+
+                    <Frame
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        HasShadow="True"
+                        Padding="5,5,5,5">
+                        <StackLayout>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+
+                                </Grid.ColumnDefinitions>
+
+                                <Button
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Text="Gravar"
+                                    Clicked="BtnGravarClick"/>
+
+                            </Grid>
+
+                        </StackLayout>
+
+                    </Frame>
+
+
+                </Grid>
+
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+
