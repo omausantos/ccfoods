@@ -137,5 +137,6 @@
     <BundleResource Include="Resources\icone_list.png" />
     <BundleResource Include="Resources\icone_new.png" />
     <BundleResource Include="Resources\icone_garcons.png" />
+    <BundleResource Include="Resources\icone_entregadores.png" />
   </ItemGroup>
 </Project>

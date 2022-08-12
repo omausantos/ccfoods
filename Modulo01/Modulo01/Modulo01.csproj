@@ -17,9 +17,15 @@
   <ItemGroup>
     <None Remove="Paginas\" />
     <None Remove="Paginas\Garcons\" />
+    <None Remove="Modelo\" />
+    <None Remove="Dal\" />
+    <None Remove="Paginas\Entregadores\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Paginas\" />
     <Folder Include="Paginas\Garcons\" />
+    <Folder Include="Modelo\" />
+    <Folder Include="Dal\" />
+    <Folder Include="Paginas\Entregadores\" />
   </ItemGroup>
 </Project>
