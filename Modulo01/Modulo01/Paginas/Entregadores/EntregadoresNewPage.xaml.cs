@@ -5,6 +5,7 @@ using Xamarin.Forms;
 
 using Modulo01.Dal;
 using Modulo01.Modelo;
+using System.Linq;
 
 namespace Modulo01.Paginas.Entregadores
 {
@@ -20,7 +21,7 @@ namespace Modulo01.Paginas.Entregadores
 
         private void PrepararParaNovoEntregador()
         {
-            var novoId = dalEntregador.GetAll().Count + 1;
+            var novoId = dalEntregador.GetAll().OrderBy(i => i.Id).Max(i => i.Id) + 1;
             identregador.Text = novoId.ToString().Trim();
             nome.Text = String.Empty;
             telefone.Text = String.Empty;
@@ -40,6 +41,7 @@ namespace Modulo01.Paginas.Entregadores
                     Telefone = telefone.Text
                 });
                 PrepararParaNovoEntregador();
+                Navigation.PushAsync(new Entregadores.EntregadoresPage());
             }
         }
     }
