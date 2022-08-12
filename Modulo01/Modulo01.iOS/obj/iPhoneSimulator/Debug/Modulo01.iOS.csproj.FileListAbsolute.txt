@@ -58,6 +58,7 @@
 /Users/omausantos/WorkStation/TicketGo/Estudo/CCFoods/Modulo01/Modulo01.iOS/obj/iPhoneSimulator/Debug/optimized/icone_list.png
 /Users/omausantos/WorkStation/TicketGo/Estudo/CCFoods/Modulo01/Modulo01.iOS/obj/iPhoneSimulator/Debug/optimized/icone_new.png
 /Users/omausantos/WorkStation/TicketGo/Estudo/CCFoods/Modulo01/Modulo01.iOS/obj/iPhoneSimulator/Debug/optimized/icone_garcons.png
+/Users/omausantos/WorkStation/TicketGo/Estudo/CCFoods/Modulo01/Modulo01.iOS/obj/iPhoneSimulator/Debug/optimized/icone_entregadores.png
 /Users/omausantos/WorkStation/TicketGo/Estudo/CCFoods/Modulo01/Modulo01.iOS/obj/iPhoneSimulator/Debug/optimized/
 /Users/omausantos/WorkStation/TicketGo/Estudo/CCFoods/Modulo01/Modulo01.iOS/obj/iPhoneSimulator/Debug/Modulo01.iOS.csproj.AssemblyReference.cache
 /Users/omausantos/WorkStation/TicketGo/Estudo/CCFoods/Modulo01/Modulo01.iOS/obj/iPhoneSimulator/Debug/Modulo01.iOS.csproj.CoreCompileInputs.cache
