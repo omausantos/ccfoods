@@ -13,6 +13,7 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2515" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
+    <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Paginas\" />
@@ -21,6 +22,7 @@
     <None Remove="Dal\" />
     <None Remove="Paginas\Entregadores\" />
     <None Remove="Paginas\TiposItensCardapio\" />
+    <None Remove="Xam.Plugin.Media" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Paginas\" />
