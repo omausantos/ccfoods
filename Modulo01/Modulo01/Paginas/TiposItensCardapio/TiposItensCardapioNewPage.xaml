@@ -4,6 +4,93 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Modulo01.Paginas.TiposItensCardapio.TiposItensCardapioNewPage">
     <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+                VerticalOptions="Center">
+                <Grid
+                    Padding="5, 10, 5, 10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Frame Grid.Row="0" Grid.Column="0" BorderColor="Black" BackgroundColor="Yellow" HasShadow="True" Padding="5,5,5,5">
+                        <StackLayout>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20*" />
+                                    <ColumnDefinition Width="60*" />
+                                    <ColumnDefinition Width="20*" />
+                                </Grid.ColumnDefinitions>
+                                <Image Source="icone_tipoitemcardapio.png" Grid.Row="0" Grid.Column="0" />
+                                <Label Text="Novo Tipo de Item do Cardápio" FontSize="24" TextColor="Blue" HorizontalOptions="Start" VerticalOptions="Center" Grid.Row="0" Grid.Column="1" />
+                                <Label Text="Id" FontSize="24" TextColor="Blue" HorizontalOptions="End" VerticalOptions="Center" x:Name="idtipoitemcardapio" Grid.Row="0" Grid.Column="2" />
+                            </Grid>
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame Grid.Row="1" Grid.Column="0" BorderColor="Black" HasShadow="True" Padding="5,5,5,5">
+                        <StackLayout>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100*"/>
+                                </Grid.ColumnDefinitions>
+                                <Entry Placeholder="Nome do Tipo" PlaceholderColor="Gray" Text="{Binding Nome}" x:Name="nome" Grid.Row="0" Grid.Column="0"/>
+                            </Grid>
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame Grid.Row="2" Grid.Column="0" BorderColor="Black" HasShadow="True" Padding="5,5,5,5" x:Name="framefoto">
+                        <StackLayout>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="50"/>
+                                    <RowDefinition Height="50"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30*"/>
+                                    <ColumnDefinition Width="70*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Fotografia" HorizontalOptions="Start" FontSize="10" Grid.Row="0" Grid.Column="0"/>
+                                <Button Grid.Row="1" Grid.Column="0" Text="Camera" x:Name="BntCamera"/>
+                                <Button Grid.Row="2" Grid.Column="0" Text="Álbum" x:Name="BtnAlbum"/>
+                                <Image Grid.Row="0" Grid.Column="2" Grid.RowSpan="3" Grid.ColumnSpan="2" x:Name="fototipoitemcardapio" HorizontalOptions="End"/>
+                            </Grid>
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame Grid.Row="3" Grid.Column="0" BorderColor="Black" HasShadow="True" Padding="0">
+                        <StackLayout>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100*"/>
+                                </Grid.ColumnDefinitions>
+                                <Button Text="Gravar" Grid.Column="0" Grid.Row="0" />
+                            </Grid>
+                        </StackLayout>
+                    </Frame>
+
+                </Grid>
+
+
+            </StackLayout>
+
+        </ScrollView>
 
     </ContentPage.Content>
 </ContentPage>
