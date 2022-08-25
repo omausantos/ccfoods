@@ -4,7 +4,7 @@
              xmlns:ep="clr-namespace:Modulo01.Paginas.TiposItensCardapio"
              x:Class="Modulo01.Paginas.TiposItensCardapio.TiposItensCardapioPage">
     <TabbedPage.Children>
-        <ep:TiposItensCardapioListPage Title="Listagem" IconImageSource="icone_list.png" x:Name="listagem"/>
         <ep:TiposItensCardapioNewPage Title="Inserir novo" IconImageSource="icone_new.png" x:Name="inserir"/>
+        <ep:TiposItensCardapioListPage Title="Listagem" IconImageSource="icone_list.png" x:Name="listagem"/>
     </TabbedPage.Children>
 </TabbedPage>

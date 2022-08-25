@@ -34,5 +34,14 @@
     <string>Modulo01</string>
     <key>XSAppIconAssets</key>
     <string>Assets.xcassets/AppIcon.appiconset</string>
+    <key>NSCameraUsageDescription</key>
+    <string>Esta aplicação precisa acessar a câmera para tirar fotos.
+    </string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Esta aplicação precisa acessar suas fotos.</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Esta aplicação precisa acessar seu microfone.</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>Esta aplicação precisa acessar sua galeria de fotos.</string>
 </dict>
 </plist>
