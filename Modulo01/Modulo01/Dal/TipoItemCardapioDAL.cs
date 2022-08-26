@@ -45,6 +45,16 @@ namespace Modulo01.Dal
         {
 			this.TiposItensCardapio.Add(tipoItemCardapio);
         }
+
+		public void Remove(TipoItemCardapio tipoItemCardapio)
+        {
+			this.TiposItensCardapio.Remove(tipoItemCardapio);
+        }
+
+		public void Update(TipoItemCardapio tipoItemCardapio)
+        {
+			this.TiposItensCardapio[this.TiposItensCardapio.IndexOf(tipoItemCardapio)] = tipoItemCardapio;
+        }
 	}
 }
 
