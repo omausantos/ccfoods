@@ -123,8 +123,11 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2515" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
+    <PackageReference Include="Xam.Plugin.Media">
+      <Version>5.0.1</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -138,5 +141,9 @@
     <BundleResource Include="Resources\icone_new.png" />
     <BundleResource Include="Resources\icone_garcons.png" />
     <BundleResource Include="Resources\icone_entregadores.png" />
+    <BundleResource Include="Resources\icone_tipoitemcardapio.png" />
+    <BundleResource Include="Resources\saladas.png" />
+    <BundleResource Include="Resources\pizzas.png" />
+    <BundleResource Include="Resources\bebidas.png" />
   </ItemGroup>
 </Project>

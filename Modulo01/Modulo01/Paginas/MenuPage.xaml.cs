@@ -21,6 +21,11 @@ namespace Modulo01.Paginas
         {
             await Navigation.PushAsync(new Entregadores.EntregadoresPage());
         }
+
+        async void TiposItensCardapioOnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new TiposItensCardapio.TiposItensCardapioPage());
+        }
     }
 }
 
