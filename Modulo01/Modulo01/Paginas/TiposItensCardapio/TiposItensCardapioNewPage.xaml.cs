@@ -12,26 +12,24 @@ namespace Modulo01.Paginas.TiposItensCardapio
 {
     public partial class TiposItensCardapioNewPage : ContentPage
     {
-        private TipoItemCardapioDAL dalTipoItensCardapio = TipoItemCardapioDAL.GetInstance();
-        private string caminhoArquivo;
+        private TipoItemCardapioDAL dalTipoItensCardapio = new TipoItemCardapioDAL();
+        private byte[] bytesFoto;
 
         public TiposItensCardapioNewPage()
         {
             InitializeComponent();
             PreparaParaNovoTipoItemCardapio();
-            RegistraClickBotaoCamera(idtipoitemcardapio.Text.Trim());
-            RegitraClickBotaoAlbum(idtipoitemcardapio.Text.Trim());
+            RegistraClickBotaoCamera();
+            RegitraClickBotaoAlbum();
         }
 
         private void PreparaParaNovoTipoItemCardapio()
         {
-            var novoId = dalTipoItensCardapio.GetAll().OrderBy(i => i.Id).Max(i => i.Id) + 1;
-            idtipoitemcardapio.Text = novoId.ToString().Trim();
             nome.Text = String.Empty;
             fototipoitemcardapio.Source = null;
         }
 
-        private void RegistraClickBotaoCamera(string idparafoto)
+        private void RegistraClickBotaoCamera()
         {
             BtnCamera.Clicked += async (sender, e) =>
             {
@@ -47,7 +45,7 @@ namespace Modulo01.Paginas.TiposItensCardapio
                     new Plugin.Media.Abstractions.StoreCameraMediaOptions
                         {
                             Directory = "Fotos",
-                            Name = "tipoitem_" + idparafoto + ".jpg",
+                            Name = "tipoitem.jpg",
                             SaveToAlbum = true
                         }
                 );
@@ -55,17 +53,21 @@ namespace Modulo01.Paginas.TiposItensCardapio
                 if (file == null)
                     return;
 
-                caminhoArquivo = file.Path;
-
-                fototipoitemcardapio.Source = ImageSource.FromStream(() => {
-                    var stream = file.GetStream();
+                var stream = file.GetStream();
+                var memoryStream = new MemoryStream();
+                stream.CopyTo(memoryStream);
+                fototipoitemcardapio.Source = ImageSource.FromStream(() =>
+                {
+                    var s = file.GetStream();
                     file.Dispose();
-                    return stream;
+                    return s;
                 });
+
+                bytesFoto = memoryStream.ToArray();
             };
         }
 
-        private void RegitraClickBotaoAlbum(string idparafoto)
+        private void RegitraClickBotaoAlbum()
         {
             BtnAlbum.Clicked += async (sender, e) =>
             {
@@ -82,26 +84,17 @@ namespace Modulo01.Paginas.TiposItensCardapio
                 if (file == null)
                     return;
 
-                string nomeArquivo = "tipoitem_" + idparafoto + ".jpeg";
-
-                caminhoArquivo = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Fotos");
-
-                if (!Directory.Exists(caminhoArquivo))
-                    Directory.CreateDirectory(caminhoArquivo);
-
-                caminhoArquivo = Path.Combine(caminhoArquivo, nomeArquivo);
-
-                using (FileStream fileStream = new FileStream(caminhoArquivo, FileMode.Create))
-                {
-                    file.GetStream().CopyTo(fileStream);
-                }
-
+                var stream = file.GetStream();
+                var memoryStream = new MemoryStream();
+                stream.CopyTo(memoryStream);
                 fototipoitemcardapio.Source = ImageSource.FromStream(() =>
                 {
-                    var stream = file.GetStream();
+                    var s = file.GetStream();
                     file.Dispose();
-                    return stream;
+                    return s;
                 });
+
+                bytesFoto = memoryStream.ToArray();
             };
         }
 
@@ -114,9 +107,8 @@ namespace Modulo01.Paginas.TiposItensCardapio
             {
                 dalTipoItensCardapio.Add(new TipoItemCardapio()
                 {
-                    Id = Convert.ToInt32(idtipoitemcardapio.Text),
                     Nome = nome.Text,
-                    CaminhoArquivoFoto = caminhoArquivo
+                    Foto = bytesFoto
                 });
                 PreparaParaNovoTipoItemCardapio();
             }

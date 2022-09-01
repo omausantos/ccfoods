@@ -11,27 +11,24 @@ namespace Modulo01.Paginas.TiposItensCardapio
     public partial class TiposItensCardapioEditPage : ContentPage
     {
         private TipoItemCardapio tipoItemCardapio;
-        private string caminhoArquivo;
-        private TipoItemCardapioDAL dalTipoItemCardapio = TipoItemCardapioDAL.GetInstance();
+        private TipoItemCardapioDAL dalTipoItemCardapio = new TipoItemCardapioDAL();
+        private byte[] bytesFoto;
 
         public TiposItensCardapioEditPage(TipoItemCardapio tipoItemCardapio)
         {
             InitializeComponent();
             PopularFormulario(tipoItemCardapio);
-            RegistraClickBotaoAlbum(idtipoitemcardapio.Text.Trim());
-            RegistraClickBotaoCamera(idtipoitemcardapio.Text.Trim());
+            RegistraClickBotaoAlbum();
+            RegistraClickBotaoCamera();
         }
 
         private void PopularFormulario(TipoItemCardapio tipoItemCardapio)
         {
             this.tipoItemCardapio = tipoItemCardapio;
-            idtipoitemcardapio.Text = tipoItemCardapio.Id.ToString();
             nome.Text = tipoItemCardapio.Nome.ToString();
-            caminhoArquivo = tipoItemCardapio.CaminhoArquivoFoto;
-            fototipoitemcardapio.Source = ImageSource.FromFile(tipoItemCardapio.CaminhoArquivoFoto);
         }
 
-        private void RegistraClickBotaoAlbum(string idparafoto)
+        private void RegistraClickBotaoAlbum()
         {
             BtnAlbum.Clicked += async (sender, e) =>
             {
@@ -47,28 +44,21 @@ namespace Modulo01.Paginas.TiposItensCardapio
                 if (file == null)
                     return;
 
-                string nomeArquivo = "tipoitem_" + idparafoto + ".jpg";
-
-                caminhoArquivo = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Fotos");
-                if (!Directory.Exists(caminhoArquivo))
-                    Directory.CreateDirectory(caminhoArquivo);
-
-                caminhoArquivo = Path.Combine(caminhoArquivo, nomeArquivo);
-                using (FileStream fileStream = new FileStream(caminhoArquivo, FileMode.Create))
-                {
-                    file.GetStream().CopyTo(fileStream);
-                }
-
+                var stream = file.GetStream();
+                var memoryStream = new MemoryStream();
+                stream.CopyTo(memoryStream);
                 fototipoitemcardapio.Source = ImageSource.FromStream(() =>
                 {
-                    var stream = file.GetStream();
+                    var s = file.GetStream();
                     file.Dispose();
-                    return stream;
+                    return s;
                 });
+
+                bytesFoto = memoryStream.ToArray();
             };
         }
 
-        private void RegistraClickBotaoCamera(string idparafoto)
+        private void RegistraClickBotaoCamera()
         {
             BtnCamera.Clicked += async (sender, e) =>
             {
@@ -80,16 +70,27 @@ namespace Modulo01.Paginas.TiposItensCardapio
                     return;
                 }
 
-                var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
-                {
-                    Directory = "Fotos",
-                    Name = "tipoitem_" + idparafoto.Trim() + ".jpg"
-                });
+                var file = await CrossMedia.Current.TakePhotoAsync(
+                    new Plugin.Media.Abstractions.StoreCameraMediaOptions
+                        {
+                            Directory = "Fotos",
+                            Name = "tipoitem.jpg",
+                            SaveToAlbum = true
+                        });
                 if (file == null)
                     return;
 
-                fototipoitemcardapio.Source = ImageSource.FromFile(file.Path);
-                caminhoArquivo = file.Path;
+                var stream = file.GetStream();
+                var memoryStream = new MemoryStream();
+                stream.CopyTo(memoryStream);
+                fototipoitemcardapio.Source = ImageSource.FromStream(() =>
+                {
+                    var s = file.GetStream();
+                    file.Dispose();
+                    return s;
+                });
+
+                bytesFoto = memoryStream.ToArray();
             };
         }
 
@@ -101,8 +102,6 @@ namespace Modulo01.Paginas.TiposItensCardapio
             } else
             {
                 this.tipoItemCardapio.Nome = nome.Text;
-                this.tipoItemCardapio.CaminhoArquivoFoto = caminhoArquivo;
-                dalTipoItemCardapio.Update(this.tipoItemCardapio);
                 await Navigation.PopModalAsync();
             }
         }

@@ -1,11 +1,14 @@
 ﻿using System;
+using SQLite;
+
 namespace Modulo01.Modelo
 {
     public class TipoItemCardapio
     {
-        public long Id { get; set; }
+        [PrimaryKey, AutoIncrement]
+        public long? TipoItemCardapioId { get; set; }
         public string Nome { get; set; }
-        public string CaminhoArquivoFoto { get; set; }
+        public byte[] Foto { get; set;}
 
         public override bool Equals(object obj)
         {
@@ -14,12 +17,12 @@ namespace Modulo01.Modelo
             {
                 return false;
             }
-            return (Id.Equals(tipoItemCardapio.Id));
+            return (TipoItemCardapioId.Equals(tipoItemCardapio.TipoItemCardapioId));
         }
 
         public override int GetHashCode()
         {
-            return Id.GetHashCode();
+            return TipoItemCardapioId.GetHashCode();
         }
     }
 }

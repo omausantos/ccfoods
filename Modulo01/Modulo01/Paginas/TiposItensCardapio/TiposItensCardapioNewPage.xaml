@@ -32,7 +32,6 @@
                                 </Grid.ColumnDefinitions>
                                 <Image Source="icone_tipoitemcardapio.png" Grid.Row="0" Grid.Column="0" />
                                 <Label Text="Novo Tipo de Item do Cardápio" FontSize="24" TextColor="Blue" HorizontalOptions="Start" VerticalOptions="Center" Grid.Row="0" Grid.Column="1" />
-                                <Label Text="Id" FontSize="24" TextColor="Blue" HorizontalOptions="End" VerticalOptions="Center" x:Name="idtipoitemcardapio" Grid.Row="0" Grid.Column="2" />
                             </Grid>
                         </StackLayout>
                     </Frame>
@@ -80,7 +79,7 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="100*"/>
                                 </Grid.ColumnDefinitions>
-                                <Button Text="Gravar" Grid.Column="0" Grid.Row="0" />
+                                <Button Text="Gravar" Grid.Column="0" Grid.Row="0" Clicked="BtnGravarClick" />
                             </Grid>
                         </StackLayout>
                     </Frame>
