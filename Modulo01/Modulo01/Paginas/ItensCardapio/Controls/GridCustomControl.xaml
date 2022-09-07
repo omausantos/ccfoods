@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Grid
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Modulo01.Paginas.ItensCardapio.Controls.GridCustomControl">
+    <StackLayout
+        VerticalOptions="FillAndExpand"
+        Padding="0">
+        <Grid Padding="5,10,5,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="90"/>
+                <RowDefinition>
+                    <RowDefinition.Height>
+                        <OnPlatform x:TypeArguments="GridLength" Android="170" iOS="190"/>
+                    </RowDefinition.Height>
+                </RowDefinition>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Row="0" Grid.Column="0"
+                Padding="0">
+                <StackLayout HeightRequest="1" BackgroundColor="Black" Padding="0"/>
+                <Grid Padding="5,10,5,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" WidthRequest="0"
+                           Text=""
+                           x:Name="idTipo"/>
+                    <Label Grid.Row="0" Grid.Column="1"
+                           Text="Selecione o Tipo de Item"
+                           x:Name="nomeTipo"/>
+                    <Label Grid.Row="0" Grid.Column="2"
+                           Text=">"
+                           BackgroundColor="Gray"
+                           HorizontalOptions="End"/>
+                </Grid>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Grid.Column="0"
+                         Padding="0">
+                <Entry Placeholder="Nome do Item"
+                       PlaceholderColor="Gray"
+                       x:Name="nome"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="2" Grid.Column="0"
+                Padding="0">
+                <Entry Placeholder="Preço"
+                       PlaceholderColor="Gray"
+                       Keyboard="Numeric"
+                       x:Name="preco"/>
+                <StackLayout HeightRequest="1"
+                             BackgroundColor="Black"
+                             Padding="0"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="3" Grid.Column="0"
+                         Padding="0"
+                         VerticalOptions="FillAndExpand">
+                <Editor VerticalOptions="FillAndExpand"
+                        Keyboard="Chat"
+                        x:Name="descricao"/>
+                <StackLayout HeightRequest="1" BackgroundColor="Black" Padding="0"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="4" Grid.Column="0"
+                         Padding="0">
+                <Grid
+                    Padding="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnPlatform x:TypeArguments="GridLength" Android="130" iOS="170"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnPlatform x:TypeArguments="GridLength" Android="40" iOS="20"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Row="0" Grid.Column="0"
+                           Aspect="AspectFill"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="FillAndExpand"
+                           x:Name="fotoAlbum"/>
+
+                    <Button Grid.Row="1" Grid.Column="0"
+                            Text="Recuperar foto do álbum"/>
+
+                </Grid>
+
+            </StackLayout>
+
+            <StackLayout Grid.Row="5" Grid.Column="0"
+                         Padding="20,0,20,0"
+                         BackgroundColor="#009933"
+                         Orientation="Horizontal"
+                         HorizontalOptions="FillAndExpand">
+                <StackLayout HorizontalOptions="CenterAndExpand"
+                             Orientation="Horizontal">
+                    <Image Source="icone_save.png"
+                           HorizontalOptions="Center"/>
+                    <Label Text="Gravar Item"
+                           VerticalOptions="Center"
+                           FontAttributes="Bold"/>
+                </StackLayout>
+            </StackLayout>
+
+        </Grid>
+
+
+    </StackLayout>
+</Grid>
+
