@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using SQLite;
+using SQLiteNetExtensions.Attributes;
 
 namespace Modulo01.Modelo
 {
@@ -9,6 +11,9 @@ namespace Modulo01.Modelo
         public long? TipoItemCardapioId { get; set; }
         public string Nome { get; set; }
         public byte[] Foto { get; set;}
+
+        [OneToMany]
+        public List<ItemCardapio> Itens { get; set; }
 
         public override bool Equals(object obj)
         {
