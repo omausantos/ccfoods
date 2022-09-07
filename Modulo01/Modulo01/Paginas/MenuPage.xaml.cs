@@ -26,6 +26,11 @@ namespace Modulo01.Paginas
         {
             await Navigation.PushAsync(new TiposItensCardapio.TiposItensCardapioPage());
         }
+
+        async void ItensCardapioOnClicked(System.Object sender, System.EventArgs e)
+        {
+            await Navigation.PushAsync(new Paginas.ItensCardapio.ItensCardapioPage());
+        }
     }
 }
 

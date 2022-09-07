@@ -29,6 +29,7 @@
     <None Remove="Infrastructure\" />
     <None Remove="Converters\" />
     <None Remove="SQLiteNetExtensions" />
+    <None Remove="Paginas\ItensCardapio\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Paginas\" />
@@ -39,5 +40,6 @@
     <Folder Include="Paginas\TiposItensCardapio\" />
     <Folder Include="Infrastructure\" />
     <Folder Include="Converters\" />
+    <Folder Include="Paginas\ItensCardapio\" />
   </ItemGroup>
 </Project>

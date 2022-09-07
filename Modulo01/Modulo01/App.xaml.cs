@@ -8,7 +8,7 @@ namespace Modulo01
     {
         public App ()
         {
-            MainPage = new NavigationPage(new Paginas.TiposItensCardapio.TiposItensCardapioPage());
+            MainPage = new NavigationPage(new Paginas.MenuPage());
         }
 
         protected override void OnStart ()
