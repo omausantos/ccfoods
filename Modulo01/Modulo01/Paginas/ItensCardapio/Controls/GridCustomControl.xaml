@@ -41,11 +41,19 @@
                            x:Name="idTipo"/>
                     <Label Grid.Row="0" Grid.Column="1"
                            Text="Selecione o Tipo de Item"
-                           x:Name="nomeTipo"/>
+                           x:Name="nomeTipo">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTapLookForTipos" NumberOfTapsRequired="1"/>
+                        </Label.GestureRecognizers>
+                    </Label>
                     <Label Grid.Row="0" Grid.Column="2"
                            Text=">"
                            BackgroundColor="Gray"
-                           HorizontalOptions="End"/>
+                           HorizontalOptions="End">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTapLookForTipos" NumberOfTapsRequired="1"/>
+                        </Label.GestureRecognizers>
+                    </Label>
                 </Grid>
             </StackLayout>
 

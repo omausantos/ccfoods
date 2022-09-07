@@ -11,6 +11,12 @@ namespace Modulo01.Paginas.ItensCardapio.Controls
         {
             InitializeComponent();
         }
+
+        async void OnTapLookForTipos(System.Object sender, System.EventArgs e)
+        {
+           await Navigation.PushAsync(new Paginas.TiposItensCardapio.TiposDeItensCardapioSearchPage(idTipo, nomeTipo));
+        }
+
     }
 }
 
