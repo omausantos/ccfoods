@@ -10,6 +10,15 @@ namespace Modulo01.Paginas.ItensCardapio
         public ItensCardapioPage()
         {
             InitializeComponent();
+            BtnNovoItemClick();
+        }
+
+        private void BtnNovoItemClick()
+        {
+            BtnNovoItem.Clicked += (sender, e) =>
+            {
+                Navigation.PushAsync(new ItensCardapioNewPage());
+            };
         }
     }
 }
